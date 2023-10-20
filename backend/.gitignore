@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Editors
+*.swp
+*.swo
+*.idea/
+.vscode/
+
+# Operating Systems
+.DS_Store
+*.log
+*.pid
+*.seed
+
+
+# Miscellaneous
+*.bak
+*.tmp
+*.swp

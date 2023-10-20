@@ -1,0 +1,6 @@
+# Operating Systems
+.DS_Store
+*.log
+*.pid
+*.seed
+
