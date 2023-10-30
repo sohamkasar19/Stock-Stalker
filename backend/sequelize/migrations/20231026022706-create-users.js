@@ -7,7 +7,7 @@ module.exports = {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
-        defaultValue: Sequelize.UUIDV4, // Use UUIDV4 or another default value
+        defaultValue: Sequelize.UUIDV4,
         allowNull: false,
       },
       username: {

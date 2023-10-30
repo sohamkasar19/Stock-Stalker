@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("watchlist_stocks", {
-      watchlist_stock_id: {
+      id: {
         type: Sequelize.UUID,
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4,
@@ -14,20 +14,23 @@ module.exports = {
         type: Sequelize.UUID,
         references: {
           model: "watchlists",
-          key: "watchlist_id",
+          key: "id",
         },
       },
       stock_id: {
         type: Sequelize.UUID,
         references: {
           model: "stocks",
-          key: "id", // Modify this to match the primary key column name in the stocks table
+          key: "id",
         },
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
       },
     });
   },
