@@ -2,6 +2,11 @@ module.exports = (sequelize, DataTypes) => {
   const Stock = sequelize.define(
     "Stock",
     {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,
+      },
       Symbol: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -56,7 +61,7 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     {
-      tableName: "stocks", // Define the table name
+      tableName: "stocks",
     }
   );
 
