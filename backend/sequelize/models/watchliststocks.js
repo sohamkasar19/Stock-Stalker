@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const WatchlistStock = sequelize.define(
-    "WatchlistStocks",
+    "WatchlistStock",
     {
       id: {
         type: DataTypes.UUID,
