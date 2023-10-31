@@ -4,49 +4,44 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("stocks", {
-      id: {
-        type: Sequelize.UUID,
+      symbol: {
+        type: Sequelize.STRING,
         primaryKey: true,
-        defaultValue: Sequelize.UUIDV4,
         allowNull: false,
       },
-      Symbol: {
+      stockname: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Stockname: {
+      sector: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      Sector: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      Price: {
+      price: {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
-      PriceEarning: {
+      priceEarning: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      DividendYeild: {
+      dividendYeild: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      EarningsShare: {
+      earningsShare: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      YearLow: {
+      yearLow: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      YearHigh: {
+      yearHigh: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      MarketCap: {
+      marketCap: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
@@ -54,11 +49,11 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      PriceSales: {
+      priceSales: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },
-      PriceBook: {
+      priceBook: {
         type: Sequelize.FLOAT,
         allowNull: true,
       },

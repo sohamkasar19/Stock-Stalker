@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: DataTypes.UUIDV4,
       },
       watchlist_id: DataTypes.UUID,
-      stock_id: DataTypes.UUID,
+      symbol: DataTypes.STRING,
       createdAt: DataTypes.DATE,
     },
 

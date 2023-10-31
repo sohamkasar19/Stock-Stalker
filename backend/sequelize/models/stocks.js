@@ -2,48 +2,44 @@ module.exports = (sequelize, DataTypes) => {
   const Stock = sequelize.define(
     "Stock",
     {
-      id: {
-        type: DataTypes.UUID,
+      symbol: {
+        type: DataTypes.STRING,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
       },
-      Symbol: {
+      stockname: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      Stockname: {
+      sector: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      Sector: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      Price: {
+      price: {
         type: DataTypes.FLOAT,
         allowNull: false,
       },
-      PriceEarning: {
+      priceEarning: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      DividendYeild: {
+      dividendYeild: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      EarningsShare: {
+      earningsShare: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      YearLow: {
+      yearLow: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      YearHigh: {
+      yearHigh: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      MarketCap: {
+      marketCap: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
@@ -51,11 +47,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      PriceSales: {
+      priceSales: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },
-      PriceBook: {
+      priceBook: {
         type: DataTypes.FLOAT,
         allowNull: true,
       },

@@ -13,31 +13,31 @@ module.exports = {
       fs.createReadStream(
         path.resolve(
           __dirname,
-          "/Users/milan/Downloads/constituents-financials_csv 2.csv"
+          "/Users/soham/Downloads/constituents-financials_csv 2.csv"
         )
       )
         .pipe(csv())
         .on("data", (row) => {
           // Parse and convert each field as necessary
           records.push({
-            id: uuidv4(), // Generate a UUID for each record
-            Symbol: row.Symbol,
-            Stockname: row.Stockname,
-            Sector: row.Sector,
-            Price: row.Price !== "" ? parseFloat(row.Price) : null,
-            PriceEarning:
+            // id: uuidv4(), // Generate a UUID for each record
+            symbol: row.Symbol,
+            stockname: row.Stockname,
+            sector: row.Sector,
+            price: row.Price !== "" ? parseFloat(row.Price) : null,
+            priceEarning:
               row.PriceEarning !== "" ? parseFloat(row.PriceEarning) : null,
-            DividendYeild:
+            dividendYeild:
               row.DividendYeild !== "" ? parseFloat(row.DividendYeild) : null,
-            EarningsShare:
+            earningsShare:
               row.EarningsShare !== "" ? parseFloat(row.EarningsShare) : null,
-            YearLow: row.YearLow !== "" ? parseFloat(row.YearLow) : null,
-            YearHigh: row.YearHigh !== "" ? parseFloat(row.YearHigh) : null,
-            MarketCap: row.MarketCap !== "" ? parseFloat(row.MarketCap) : null,
+            yearLow: row.YearLow !== "" ? parseFloat(row.YearLow) : null,
+            yearHigh: row.YearHigh !== "" ? parseFloat(row.YearHigh) : null,
+            marketCap: row.MarketCap !== "" ? parseFloat(row.MarketCap) : null,
             EBITDA: row.EBITDA !== "" ? parseFloat(row.EBITDA) : null,
-            PriceSales:
+            priceSales:
               row.PriceSales !== "" ? parseFloat(row.PriceSales) : null,
-            PriceBook: row.PriceBook !== "" ? parseFloat(row.PriceBook) : null,
+            priceBook: row.PriceBook !== "" ? parseFloat(row.PriceBook) : null,
             createdAt: new Date(),
             updatedAt: new Date(),
           });

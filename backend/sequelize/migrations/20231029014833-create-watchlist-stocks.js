@@ -17,11 +17,11 @@ module.exports = {
           key: "id",
         },
       },
-      stock_id: {
-        type: Sequelize.UUID,
+      symbol: {
+        type: Sequelize.STRING,
         references: {
           model: "stocks",
-          key: "id",
+          key: "symbol",
         },
       },
       createdAt: {
