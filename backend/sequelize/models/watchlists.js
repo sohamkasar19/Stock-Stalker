@@ -16,5 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       tableName: "watchlists",
     }
   );
+
+  Watchlist.associate = (models) => {
+    Watchlist.hasMany(models.WatchlistStock, { foreignKey: "watchlist_id" });
+  };
   return Watchlist;
 };

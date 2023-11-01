@@ -17,5 +17,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
 
+  WatchlistStock.associate = (models) => {
+    WatchlistStock.belongsTo(models.Watchlist, { foreignKey: "watchlist_id" });
+    WatchlistStock.belongsTo(models.Stock, {
+      foreignKey: "symbol",
+      targetKey: "symbol",
+    });
+  };
+
   return WatchlistStock;
 };

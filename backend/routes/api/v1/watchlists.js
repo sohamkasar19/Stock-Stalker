@@ -8,18 +8,14 @@ router.post("/", authenticateToken, watchlistController.createWatchlist);
 
 router.post("/addStock", authenticateToken, watchlistController.addStock);
 
-// router.get("/watchlist", authenticateToken, watchlistController.getWatchlist);
+router.get("/", authenticateToken, watchlistController.getWatchlist);
 
-// router.delete(
-//   "/watchlist",
-//   authenticateToken,
-//   watchlistController.deleteWatchlist
-// );
+router.delete("/", authenticateToken, watchlistController.deleteWatchlist);
 
-// router.delete(
-//   "/watchlist/deleteStock",
-//   authenticateToken,
-//   watchlistController.deleteStock
-// );
+router.delete(
+  "/deleteStock",
+  authenticateToken,
+  watchlistController.deleteStockFromWatchlist
+);
 
 module.exports = router;
