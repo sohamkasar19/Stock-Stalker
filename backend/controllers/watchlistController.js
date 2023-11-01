@@ -25,7 +25,7 @@ exports.createWatchlist = async (req, res) => {
 
 exports.addStock = async (req, res) => {
   try {
-    const { watchlist_id, symbol } = req.body;
+    const { watchlist_id, ticker } = req.body;
     // Check if user with the same email already exists
     const existingWatchlist = await Watchlist.findOne({
       where: { id: watchlist_id },
@@ -36,12 +36,12 @@ exports.addStock = async (req, res) => {
 
     const watchlistStock = await WatchlistStock.create({
       watchlist_id: watchlist_id,
-      symbol: symbol,
+      symbol: ticker,
     });
     // Return success response
     res.status(201).json({
       watchlist_id,
-      symbol,
+      symbol: ticker,
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -111,7 +111,7 @@ exports.deleteWatchlist = async (req, res) => {
       where: { id: watchlist_id },
     });
 
-    res.status(204).send({ message: "Watchlist deleted successfully" }); // Return a 204 No Content response on successful deletion
+    res.status(200).send({ message: "Watchlist deleted successfully" }); // Return a 204 No Content response on successful deletion
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -134,8 +134,8 @@ exports.deleteStockFromWatchlist = async (req, res) => {
     });
 
     res
-      .status(204)
-      .json({ message: "Symbol deleted from watchlist successfully" });
+      .status(200)
+      .json({ message: "Stock removed from watchlist successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
